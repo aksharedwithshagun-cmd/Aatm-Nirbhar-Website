@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --color-brand-orange: #FF6B00;
+  --color-brand-green: #1B4D2E;
+  --color-brand-black: #0D0D0D;
+  --color-brand-cream: #FAF3E0;
+  --color-orange-light: #FF9A45;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    color: #0D0D0D;
+    background-color: #FAF3E0;
+  }
+  .using-mouse * {
+    outline: none !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF3E0;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF6B00;
+  border-radius: 4px;
+}
+
+/* Hero slideshow */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hero-fade {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Menu card hover lift */
+.menu-card {
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-bottom: 3px solid #1B4D2E;
+}
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px -8px rgba(255, 107, 0, 0.3);
+}
+
+/* Review cards */
+.review-card {
+  border-left: 4px solid #1B4D2E;
+}
+
+/* Review horizontal scroll on mobile */
+.review-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #FF6B00 transparent;
+}
+.review-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+.review-scroll::-webkit-scrollbar-thumb {
+  background: #FF6B00;
+  border-radius: 2px;
+}
+
+/* Gallery hover effect */
+.gallery-tile {
+  overflow: hidden;
+}
+.gallery-tile img {
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.gallery-tile:hover img {
+  filter: brightness(0.9) saturate(1.2);
+  transform: scale(1.05);
+}
+
+/* Nav bar shadow on scroll */
+.nav-bar {
+  transition: box-shadow 0.3s ease;
+}
+.nav-bar.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth section reveals */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal overlay */
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.2s ease;
+}
+.modal-content {
+  animation: slideUp 0.3s ease;
+}
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* About image accent */
+.about-img {
+  border-left: 6px solid #FF6B00;
+}
+
+/* Star rating */
+.star {
+  color: #FF6B00;
+}
+
+/* Location cards */
+.location-card {
+  border-top: 4px solid #FF6B00;
+}
