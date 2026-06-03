@@ -8,14 +8,14 @@
   external_node_modules = []
 
 [[redirects]]
-  from = "/"
-  to = "/.netlify/functions/index"
-  status = 200
+from = "/"
+to = "/.netlify/functions/server"
+status = 200
 
 [[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/index"
-  status = 200
+from = "/*"
+to = "/.netlify/functions/server"
+status = 200
 
 [[headers]]
   for = "/assets/*"
